@@ -1,0 +1,35 @@
+<div class="auth-container">
+    <mat-card class="auth-card">
+    <h2 class="auth-title">Iniciar sesión</h2>
+  
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="auth-form">
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Correo electronico</mat-label>
+            <input matInput formControlName="email" type="email" autocomplete="email"/>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Contraseña</mat-label>
+            <input matInput formControlName="password" type="password" autocomplete="current-password"/>
+        </mat-form-field>
+  
+        <div *ngIf="form.errors?.['loginFailed']" class="error-text">
+            Credenciales incorrectas. Intenta de nuevo.
+        </div>
+  
+        <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid || loading">
+            <span *ngIf="!loading">Iniciar sesión</span>
+            <mat-spinner 
+                *ngIf="loading"
+                diameter="20"
+                mode="indeterminate"
+                color="accent">
+            </mat-spinner>
+        </button>
+    </form>
+    <div class="register-link">
+        <span>¿No tienes cuenta? </span>
+        <button mat-button (click)="navigateToRegister()" >Regístrate aquí</button>
+    </div>
+    </mat-card>
+</div>

@@ -1,0 +1,72 @@
+.auth-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 1rem;
+    background: #f4f6f8;
+}
+  
+.auth-card {
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+}
+  
+.auth-title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+  
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+  
+.full-width {
+    width: 100%;
+}
+  
+.error-text {
+    color: #d32f2f;
+    font-size: 0.9rem;
+    margin-top: -0.5rem;
+    margin-bottom: 0.5rem;
+}
+  
+.register-link {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+  
+.register-button {
+    color: #1976d2; /* Azul similar al de los botones de Material */
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.register-link {
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center;      /* Centra el contenido verticalmente */
+    margin-top: 20px;         /* Añade un espacio por encima del enlace */
+    font-size: 14px;          /* Establece un tamaño de fuente adecuado */
+  }
+  
+  .register-link span {
+    margin-right: 8px;        /* Espacio entre el texto y el botón */
+  }
+  
+  .register-link button {
+    font-size: 14px;          /* Tamaño de la fuente del botón */
+    font-weight: bold;        /* Fuente en negrita */
+    color: #1976D2;           /* Color de texto del botón */
+    background-color: transparent; /* Fondo transparente */
+    padding: 0px 16px;        /* Espaciado interno para hacerlo más grande */
+    border-radius: 20px;       /* Bordes redondeados */
+  }

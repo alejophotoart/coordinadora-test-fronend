@@ -1,0 +1,58 @@
+<div class="register-container">
+    <mat-card class="register-card">
+        <h2>Crear una cuenta</h2>
+  
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Nombre completo</mat-label>
+                <input matInput formControlName="name" type="text" autocomplete="name" />
+                <mat-error *ngIf="form.get('name')?.invalid && form.get('name')?.touched">
+                    Nombre requerido
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Correo electronico</mat-label>
+                <input matInput formControlName="email" type="email" autocomplete="email" />
+                <mat-error *ngIf="form.get('email')?.invalid && form.get('email')?.touched">
+                    Correo electronico inválido
+                </mat-error>
+            </mat-form-field>
+    
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Contraseña</mat-label>
+                <input matInput formControlName="password" type="password" autocomplete="new-password" />
+                <mat-error *ngIf="form.get('password')?.hasError('required') && form.get('password')?.touched">
+                    La contraseña es requerida
+                </mat-error>
+                <mat-error *ngIf="form.get('password')?.hasError('minlength') && (form.get('password')?.dirty || form.get('password')?.touched)">
+                    La contraseña debe tener al menos 6 caracteres
+                </mat-error>
+            </mat-form-field>
+    
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Confirmar contraseña</mat-label>
+                <input matInput formControlName="confirmPassword" type="password" autocomplete="new-password" />
+                <mat-error *ngIf="form.errors?.['passwordMismatch'] && (form.get('confirmPassword')?.dirty || form.get('confirmPassword')?.touched)">
+                    Las contraseñas no coinciden
+                </mat-error>
+            </mat-form-field>
+  
+            <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid || loading" class="btn-register">
+                <span *ngIf="!loading">Registrarse</span>
+                <mat-progress-spinner 
+                    *ngIf="loading"
+                    diameter="20"
+                    mode="indeterminate"
+                    color="accent">
+                </mat-progress-spinner>
+            </button>
+        </form>
+  
+        <div class="login-link">
+            <span>¿Ya tienes cuenta?</span>
+            <button mat-button (click)="navigateToLogin()">Inicia sesión</button>
+        </div>
+    </mat-card>
+</div>
+  
