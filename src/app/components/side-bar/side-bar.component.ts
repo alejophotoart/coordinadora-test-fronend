@@ -6,7 +6,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule, MatSidenav } from '@angular/material/sidenav';
 
-
 @Component({
   selector: 'app-side-bar',
   templateUrl: './side-bar.component.html',
@@ -21,7 +20,6 @@ import { MatSidenavModule, MatSidenav } from '@angular/material/sidenav';
   ],
 })
 export class SideBarComponent {
-  @ViewChild('sidenav') sidenav!: MatSidenav;
 
   isExpanded = true;
   
@@ -37,8 +35,8 @@ export class SideBarComponent {
 
   reason = '';
 
-  close(reason: string) {
-    this.reason = reason;
-    this.sidenav.close();
+  toggleSidebar() {
+    this.isExpanded = !this.isExpanded;
   }
+
 }
