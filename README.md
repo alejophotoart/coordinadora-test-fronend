@@ -28,3 +28,8 @@ o
 ```bash
 ng install
 ```
+
+Esto fue todo por el frontend
+
+Muchas gracias
+Saludos!
