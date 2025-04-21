@@ -1,6 +1,18 @@
 # Frontend Coordinadora Envios
 
+## Autor
+**Jose Alejandro Calderon Rico**
+📧 alejandronba98@gmail.com  
+📱 +57 315 470 9447
+
 Este proyecto fue generado usando [Angular CLI](https://github.com/angular/angular-cli) version 19.2.4.
+
+- Desarrollo: Frontend
+- Framework: Angular
+- Lenguaje: Typescript
+- UI: Material UI
+- Control de Versiones: GIT
+- Seguridad: JWT
 
 ## Servidor de desarrollo
 
